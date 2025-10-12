@@ -1,0 +1,45 @@
+{
+  // "files": [],
+   "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": true,  // 允许 JavaScript 文件
+    "checkJs": false,  // 不检查 JavaScript 文件类型
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx", 
+    "src/**/*.vue",
+    "src/**/*.js",    // 包含 JavaScript 文件
+    "src/**/*.jsx"    // 包含 JavaScript JSX 文件
+  ],
+  "exclude": ["node_modules"],
+  // "references": [
+  //   {
+  //     "path": "./tsconfig.node.json"
+  //   },
+  //   {
+  //     "path": "./tsconfig.app.json"
+  //   },
+  //   {
+  //     "path": "./tsconfig.vitest.json"
+  //   }
+  // ]
+}

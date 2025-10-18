@@ -171,7 +171,5 @@ router.get('/rank/list', async (ctx) => {
     },
   ]
 });
-router.get('/', async (ctx) => {
 
-});
 module.exports = router;

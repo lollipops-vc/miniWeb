@@ -68,7 +68,7 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 export default {
   name: 'car-swapper',
   data () {
@@ -94,12 +94,12 @@ export default {
       this[key] = type;
     },
     async getSwapper() {
-      // const res = await axios.get('http://localhost:3000/vue3/swapper')
-      // this.swapperList = res.data
+      const res = await axios.get('http://localhost:3000/vue3/swapper')
+      this.swapperList = res.data
     },
     async getText() {
-      // const res = await axios.get('http://localhost:3000/vue3/text')
-      // this.textList = res.data
+      const res = await axios.get('http://localhost:3000/vue3/text')
+      this.textList = res.data
     }
   },
   mounted() {

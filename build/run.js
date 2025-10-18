@@ -1,16 +1,18 @@
-const childProcess = require ('child_process')
+const childProcess = require ('child_process');
+const { Server } = require('http');
 const path = require('path')
 const filePath = {
     vue2:path.join(__dirname,'../vue2'),
     vue3:path.join(__dirname,'../vue3'),
+    service:path.join(__dirname,'../service'),
 }
 console.log(filePath);
 
-// cd 子应用的目录，npm run dev 启动项目
+// cd 子应用的目录，npm run start 启动项目
 function runChild (){
     Object.keys(filePath).forEach(item =>{
         const projectPath = filePath[item];
-        childProcess.spawn('npm', ['run', 'dev'], {
+        childProcess.spawn('npm', ['run', 'start'], {
             cwd: projectPath,
             stdio: "inherit",
             shell: true

@@ -15,6 +15,7 @@ const users = require('./routes/users');
 const vue2 = require('./routes/vue2');
 const vue3 = require('./routes/vue3');
 const react15 = require('./routes/react15');
+const react17 = require('./routes/react17');
 
 // error handler
 onerror(app);
@@ -50,6 +51,8 @@ app.use(vue3.routes());
 app.use(vue3.allowedMethods());
 app.use(react15.routes());
 app.use(react15.allowedMethods());
+app.use(react17.routes());
+app.use(react17.allowedMethods());
 
 // error-handling
 app.on('error', (err, ctx) => {

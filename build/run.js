@@ -5,6 +5,7 @@ const filePath = {
     vue2:path.join(__dirname,'../vue2'),
     vue3:path.join(__dirname,'../vue3'),
     react15:path.join(__dirname,'../react15'),
+    react17:path.join(__dirname,'../react17'),
     service:path.join(__dirname,'../service'),
 }
 console.log(filePath);

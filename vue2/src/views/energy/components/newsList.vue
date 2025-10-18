@@ -76,8 +76,9 @@
 
 <script >
 import VTabs from '../../../components/v-tabs/index.vue'
-const rankCar = require('../../../assets/rank-car.png')
-// import axios from 'axios'
+import rankCar from '../../../assets/rank-car.png'
+// const rankCar = require('../../../assets/rank-car.png')
+import axios from 'axios'
 export default {
   name: 'newsList',
   components: {
@@ -122,12 +123,12 @@ export default {
   },
   methods: {
     async getNewList() {
-      // const res = await axios.get('http://localhost:3000/vue2/new/list')
-      // this.newList = res.data
+      const res = await axios.get('http://localhost:3000/vue2/new/list')
+      this.newList = res.data
     },
     async getRankList() {
-      // const res = await axios.get('http://localhost:3000/vue2/rank/list')
-      // this.rankList = res.data
+      const res = await axios.get('http://localhost:3000/vue2/rank/list')
+      this.rankList = res.data
     },
   },
   mounted() {

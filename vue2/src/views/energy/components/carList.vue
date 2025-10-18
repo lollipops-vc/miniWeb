@@ -12,7 +12,7 @@
 </template>
 
 <script >
-// import axios from 'axios'
+import axios from 'axios'
 export default {
   name: 'carList',
   data () {
@@ -22,8 +22,9 @@ export default {
   },
   methods: {
     async getCarLst() {
-      // const res = await axios.get('http://localhost:3000/vue2/car/list')
-      // this.carList = res.data
+      const res = await axios.get('http://localhost:3000/vue2/car/list')
+      console.log('res-----',res);
+      this.carList = res.data
     }
   },
   mounted() {

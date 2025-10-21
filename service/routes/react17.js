@@ -3,9 +3,10 @@ const router = new Router();
 router.prefix('/react17')//添加路由前缀
 
 router.post('/login', async(ctx) =>{
-  ctx.body = {
-    msg: 'success'
-  }
+  // ctx.body = {
+  //   msg: 'success'
+  // }
+  ctx.body=ctx.request.body
 })
 
 router.get('/new/car', async(ctx) =>{

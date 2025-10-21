@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     async getCarLst() {
-      const res = await axios.get('http://localhost:3000/vue2/car/list')
+      const res = await axios.get('http://localhost:3000/vue2/car/list?a=1&b=2')
       console.log('res-----',res);
       this.carList = res.data
     }

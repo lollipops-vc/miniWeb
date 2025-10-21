@@ -3,9 +3,7 @@ const router = new Router();
 router.prefix('/vue2')//添加路由前缀
 
 router.get('/car/list', async (ctx) => {
-  // yield this.render('index', {
-  //   title: 'Hello World Koa!'
-  // });
+  // ctx.body = ctx.request.query
   ctx.body = [
     {
       img: 'http://localhost:3000/images/car-four.png',

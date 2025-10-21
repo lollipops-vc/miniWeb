@@ -7,6 +7,11 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    // 根路径重定向到 energy
+    path: '/',
+    redirect: '/energy'
+  },
+  {
     // 新能源
     path: '/energy',
     name: 'Energy',

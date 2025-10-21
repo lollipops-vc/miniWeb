@@ -8,9 +8,13 @@ import axios from 'axios'
 const LoginPanel = () => {
 
   const goIndex = () => {
-    axios.post("http://localhost:3000/react17/login").then(res => {
-      main.appInfo.loginState.logined()
-      main.appInfo.routerLink.routerPush('/vue3/#/index')
+    axios.post("http://localhost:3000/react17/login",{
+      a:1,b:2
+    }).then(res => {
+      console.log('登录成功');
+      
+      // main.appInfo.loginState.logined()
+      // main.appInfo.routerLink.routerPush('/vue3/#/index')
     })
   }
 

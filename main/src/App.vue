@@ -4,7 +4,7 @@
   <Header />
   <div class="sub_container">
     <Loading v-if="Loading"/>
-  <div v-if="!Loading" class="sub_body">zidingyi </div>
+  <div v-if="!Loading" id="micro-container" class="sub_body">zidingyi </div>
   </div>
   
   <!-- 底部 -->
@@ -47,6 +47,10 @@ header {
 .sub_container{
   min-height: 100%;
   position: relative;
+}
+#micro-container{
+  min-height: 100%;
+  width: 100%;
 }
 .sub_body{
   min-height: 100%;

@@ -35,73 +35,39 @@
 
 <script>
 import { ref, nextTick, watch } from 'vue'
-import { NAV_LIST } from '../const'
+import { NAV_LIST } from '../const/nav'
 // import { Value } from 'sass-embedded';
 // import { headerState } from '../../store'
-// import { useRouter, useRoute } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 export default {
     name: 'nav',
     setup() {
-        const NAV_LIST = [
-            {
-                name: '首页',
-                status: true,
-                value: 0,
-                url: '/vue3/#/index',
-                hash: '',
-            },
-            {
-                name: '资讯',
-                status: false,
-                value: 1,
-                url: '/react15#/information',
-            },
-            {
-                name: '视频',
-                status: false,
-                value: 2,
-                url: '/react15#/video',
-                hash: '',
-            },
-            {
-                name: '选车',
-                status: false,
-                value: 3,
-                url: '/vue3/#/select',
-                hash: '',
-            },
-            {
-                name: '新能源',
-                status: false,
-                value: 4,
-                url: '/vue2#/energy',
-                hash: '',
-            },
-            {
-                name: '新车',
-                status: false,
-                value: 5,
-                url: '/react16#/new-car',
-                hash: '',
-            },
-            {
-                name: '排行',
-                status: false,
-                value: 6,
-                url: '/react16#/rank',
-                hash: '',
-            },
-        ]
+        const router = useRouter()
+        const route = useRoute();
         const currentIndex = ref(0)
-           const setCurrentIndex = (data,index)=>{
+        const setCurrentIndex = (item, index) => {
             currentIndex.value = index
-           }
-
+            router.push(item.url)
+        }
+        watch(route, (val) => {
+            for (let i = 0, len = NAV_LIST.length; i < len; i++) {
+                if (
+                    NAV_LIST[i].url &&
+                    val.fullPath.indexOf(NAV_LIST[i].url) !== -1
+                ) {
+                    currentIndex.value = i
+                    //   headerState.setCurrentIndex(i)
+                    return
+                }
+            }
+        }, { deep: true, immediate: true })
 
         return {
             currentIndex,
             NAV_LIST,
+            router,
+            route,
             setCurrentIndex
         }
     }

@@ -9,7 +9,7 @@ const routes = [
     component: () => import('../App.vue'),
   },
   {
-    path: '/react16',
+    path: '/react17',
     component: () => import('../App.vue'),
   },
   {

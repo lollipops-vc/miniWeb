@@ -7,11 +7,11 @@ export const subNavList = [
     activeRule: '/react15',
   },
   {
-    name: 'react16',
+    name: 'react17',
     entry: '//localhost:9003/',
     // loading,
     container: '#micro-container',
-    activeRule: '/react16',
+    activeRule: '/react17',
     // appInfo,
   },
   {

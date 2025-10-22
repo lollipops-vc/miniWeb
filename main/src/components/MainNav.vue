@@ -47,6 +47,9 @@ export default {
         const route = useRoute();
         const currentIndex = ref(0)
         const setCurrentIndex = (item, index) => {
+            if(item.url ==  route.fullPath){
+                return 
+            }
             currentIndex.value = index
             router.push(item.url)
         }
